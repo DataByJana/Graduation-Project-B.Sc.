@@ -1,0 +1,29 @@
+# Core
+streamlit
+plotly>=5.20
+pandas>=2.0
+numpy
+python-dateutil
+
+# ML / NLP
+torch
+tokenizers
+scikit-learn
+
+# Data + APIs
+requests
+apify-client
+
+# Visualization
+
+pydeck
+
+# Text processing
+emoji
+
+# Optional (but recommended)
+tqdm
+torch
+transformers
+torchvision
+huggingface_hub
