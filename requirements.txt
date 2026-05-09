@@ -7,7 +7,7 @@ python-dateutil
 
 # ML / NLP
 torch
-tokenizers
+tokenizers==0.22.0
 scikit-learn==1.6.1
 transformers==5.0.0
 safetensors
