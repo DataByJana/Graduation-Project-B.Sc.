@@ -1,4 +1,5 @@
 import json
+import traceback
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -239,7 +240,12 @@ def load_and_process(max_tweets, max_fda):
         max_items=max_tweets
     )
     fda_df = fetch_fda_recalls(limit=max_fda)
-    alert_pipe, ner_pipe, category_pipe = load_models()
+    try:
+        alert_pipe, ner_pipe, category_pipe = load_models()
+    except Exception as e:
+        st.error(f"❌ Model loading failed: {str(e)}")
+        st.code(traceback.format_exc())
+        st.stop()
     final_df = run_pipeline(
         tweets_df=tweets_df,
         fda_df=fda_df,
