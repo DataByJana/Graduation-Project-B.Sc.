@@ -8,22 +8,27 @@ python-dateutil
 # ML / NLP
 torch
 tokenizers
-scikit-learn
+scikit-learn==1.6.1
 
 # Data + APIs
 requests
 apify-client
+huggingface_hub
 
 # Visualization
-
 pydeck
 
 # Text processing
 emoji
+ftfy
 
 # Optional (but recommended)
 tqdm
-torch
 transformers
 torchvision
-huggingface_hub
+
+# Automation
+streamlit-autorefresh
+
+# Map
+geopy
