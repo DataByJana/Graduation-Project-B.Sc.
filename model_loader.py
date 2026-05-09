@@ -1,9 +1,29 @@
+import sys
 import pickle
 import streamlit as st
 from huggingface_hub import hf_hub_download
 
-REPO_ID = "DataByJana/GP-models"
+# ── Compatibility shims for models saved with older transformers ──
+import transformers
+import transformers.models
 
+# Patch missing internal modules that old pkl files reference
+module_patches = [
+    "transformers.core_model_loading",
+    "transformers.models.auto.modeling_auto",
+    "transformers.models.bert.modeling_bert",
+    "transformers.models.roberta.modeling_roberta",
+]
+for mod in module_patches:
+    if mod not in sys.modules:
+        try:
+            import importlib
+            sys.modules[mod] = importlib.import_module(mod)
+        except Exception:
+            import types
+            sys.modules[mod] = types.ModuleType(mod)
+
+REPO_ID = "DataByJana/GP-models"
 ALERT_MODEL_FILE = "bertweet_alert_detection_model.pkl"
 NER_MODEL_FILE = "biobert_best_ner_model.pkl"
 CATEGORY_MODEL_FILE = "modernbert_product_best_model.pkl"
