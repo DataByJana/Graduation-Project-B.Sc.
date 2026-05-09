@@ -7,8 +7,9 @@ python-dateutil
 
 # ML / NLP
 torch
-tokenizers
+tokenizers>=0.13
 scikit-learn==1.6.1
+transformers>=4.35.0
 
 # Data + APIs
 requests
@@ -24,7 +25,6 @@ ftfy
 
 # Optional (but recommended)
 tqdm
-transformers
 torchvision
 
 # Automation
