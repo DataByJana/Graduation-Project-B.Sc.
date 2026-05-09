@@ -232,7 +232,6 @@ def add_coordinates(input_df):
 # =========================================================
 # LOAD DATA + MODELS
 # =========================================================
-@st.cache_data(ttl=1800, show_spinner=False)
 def load_and_process(max_tweets, max_fda):
     apify_token = st.secrets.get("APIFY_TOKEN", "")
     tweets_df = fetch_tweets(
