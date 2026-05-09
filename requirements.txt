@@ -6,10 +6,11 @@ numpy
 python-dateutil
 
 # ML / NLP
-torch
-tokenizers>=0.13
+torch==2.1.0
+tokenizers==0.15.2
 scikit-learn==1.6.1
-transformers>=4.35.0
+transformers==4.40.0
+safetensors
 
 # Data + APIs
 requests
@@ -23,7 +24,7 @@ pydeck
 emoji
 ftfy
 
-# Optional (but recommended)
+# Optional
 tqdm
 torchvision
 
