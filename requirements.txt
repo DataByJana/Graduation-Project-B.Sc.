@@ -6,8 +6,8 @@ numpy
 python-dateutil
 
 # ML / NLP
-torch==2.1.0
-tokenizers==0.15.2
+torch
+tokenizers==0.19.1
 scikit-learn==1.6.1
 transformers==4.40.0
 safetensors
