@@ -4,6 +4,7 @@ plotly>=5.20
 pandas>=2.0
 numpy
 python-dateutil
+click
 
 # ML / NLP
 torch
