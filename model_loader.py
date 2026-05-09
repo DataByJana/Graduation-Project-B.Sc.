@@ -1,5 +1,7 @@
 import os
+import sys
 import pickle
+import traceback
 import streamlit as st
 from huggingface_hub import hf_hub_download
 
@@ -19,8 +21,10 @@ def load_pickle_model(filename):
         with open(path, "rb") as f:
             return pickle.load(f)
     except Exception as e:
-        st.error(f"Failed to load {filename}: {str(e)}")
-        raise e
+        full_error = traceback.format_exc()
+        st.error(f"❌ Failed to load {filename}")
+        st.code(full_error)
+        st.stop()
 
 def patch_modernbert_sliding_window(model):
     if model is None:
